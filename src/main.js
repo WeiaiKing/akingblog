@@ -1,11 +1,10 @@
-const Koa = require('koa')
-
-const app = new Koa()
+const app = require('./app')
+const config = require('./app/config')
 
 app.use(async ctx => {
   ctx.body = 'Hello World';
 });
 
-app.listen(8888, () => {
-  console.log('启动')
+app.listen(config.APP_PORT, () => {
+  console.log(`${config.APP_PORT}启动`)
 })
