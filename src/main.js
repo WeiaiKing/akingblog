@@ -1,10 +1,8 @@
-const app = require('./app')
-const config = require('./app/config')
+const app = require('./app');
+require('./app/database');
 
-app.use(async ctx => {
-  ctx.body = 'Hello World';
-});
+const config = require('./app/config');
 
 app.listen(config.APP_PORT, () => {
-  console.log(`${config.APP_PORT}启动`)
-})
+  console.log(`服务器在${config.APP_PORT}端口启动成功~`);
+});
