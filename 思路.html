@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  1.搭好项目，装好koa,然后把项目跑起来。然后就是划分目录结构
+
+  2.首先是new koa 单独的放入app/index.js里面，然后会处理router相关的。之间涉及到环境变量的设置
+  3.每个接口的路由规则要单独抽离，放在controller下，就是MVC中C控制，中间的调度者。主要处理接口的请求
+  处理，返回数据。期间会涉及到数据库的查询，数据库也单独的处理，放在service(服务)的文件下。数据库
+  需要连接成功之后才能查询数据。
+
+</body>
+
+</html>
