@@ -48,6 +48,34 @@
     分布式系统：一台服务器有多个系统--用户管理系统，商品信息系统，用户订单系统，物流信息系统等等，系统进行拆分。
   </p>
 
+
+  <p>
+    所以使用token
+    1.生成token:登录的时候，颁发token
+    2.验证token:访问某些资源或者接口时，验证token；
+
+    npm install jsonwebtoken
+  </p>
+  <p>
+    一般我们会直接将token放入到header中的，而不是json中{token} Bearer（送信人） token
+
+    authorization.replace("Bearer ","")
+
+    默认的是hs256 对称加密，就同一个key 只要有key就可以加密和解密token了 这个key 可以自己自定吧！
+
+    rs256 非对称加密，私钥只有一个人有，解密的话可以通过publickey就可以了 没有私钥就不可以加密，就不可以颁发token了
+
+    那私钥和公钥，我们该如何生成呢？ openssl(mac自带) （cmd:openssl 无法使用） git bash: 可以直接使用
+    私钥(private key)：用于发布令牌
+    公钥(public key)：用于验证令牌
+
+    终端输入
+    openssl
+    genrsa -out private.key 1024
+    然后通过私钥生成公钥
+    rsa -in private.key -pubout -out public.key
+  </p>
+
 </body>
 
 </html>

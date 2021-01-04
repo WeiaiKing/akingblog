@@ -55,8 +55,46 @@
   <li>
     如何进行巧妙的动态加载路由 如何进行抽取 设计模式
   </li>
+  <li>
+    在项目中的任何一个地方的相对路径，都是相对于process.cwd()
+    就是在哪个目录启动项目的，所以当使用fs获取到相对路径的时候要特别的注意
+    但是你为啥不跟我讲解决问题呢？
+  </li>
+  <li>
+    postman token 的实时更新 const res = pm.response.json();
+    pm.globals.set("token",res.token);
+    然后token就是全局的变量了，每次请求的token都是最新的全局变量了。
+    然后在 Bearer token 中使用 {{token}}即可
+  </li>
+  <li>
+    query ==》 ？id = 1
+    params ==> post params
+  </li>
+  <li>
+    验证登录的用户是否有具备权限去修改内容，
+  </li>
+  <li>
+    评论的添加，修改，删除，查询，权限的判断
+    业务权限：登录的这个人的id和删除信息的关联用户id是否一致就可以了
 
+    后台管理系统
+    一对一：user-->role
+    多对多：role-->menu(删除动态/修改动态)
+  </li>
 
+  不对刚才是动态接口的增删改，下面才是评论的增删改
+
+  <li>
+    评论：
+    1.id,2.content
+    3.user_id 外键约束user_id
+    4.moment_id 外键约束 moment_id
+    5.comment_id 外键约束
+
+    如何快速的理清思路，就是理清表与表之间的管理，外键约束。
+    前端大哥做完了页面，但是还是理不清业务，可能就是这个原因吧。因为没有认真的理清楚表之间的关系
+
+  </li>
 </body>
 
 </html>
